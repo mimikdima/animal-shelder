@@ -1,0 +1,9 @@
+<div class="pets" [formGroup]="childForm">
+  What kind of pet do you want?
+  <div class="select-dropdown">
+      <select [formControlName]="'pet'">
+        <option value="" selected disabled></option>
+        <option *ngFor="let pet of petsList" [value]="pet.id">{{pet.name}}</option>
+      </select>
+  </div>
+</div>

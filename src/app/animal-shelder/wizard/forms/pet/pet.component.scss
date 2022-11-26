@@ -1,0 +1,98 @@
+.pets{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;/*
+    .select-dropdown {
+        position: relative;
+        background-color: rgb(62, 112, 155);
+        color: white;
+        width: auto;
+        float: left;
+        max-width: 100%;
+        border-radius: 2px;
+        margin-left: 20px;
+        select {
+          font-family: "helvetica neue", helvetica;
+          font-size: 1rem;
+          font-weight: 200;
+          max-width: 100%;
+          padding: 8px 24px 8px 10px;
+          border: none;
+          background-color: transparent;
+          -webkit-appearance: none;
+             -moz-appearance: none;
+                  appearance: none;
+          &:active,
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+        }
+        &:after {
+          content: " ";
+          position: absolute;
+          top: 50%;
+          margin-top: -2px;
+          right: 8px;
+          width: 0; 
+          height: 0; 
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid #aaa;
+        }
+
+    }  
+*/
+
+
+
+  .select-dropdown{
+    min-width: 110px;
+
+    select{
+      //   -webkit-appearance: none;
+      padding: 7px 20px 7px 12px;
+      border: 1px solid #E8EAED;
+      border-radius: 5px;
+      background: #303245;
+      color: white;
+      box-shadow: 0 1px 3px -2px #9098A9;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 16px;
+      transition: all 150ms ease;
+      &:required:invalid{
+        color: #5A667F;
+      }
+      option{
+        color: white;
+        &[value=""][disabled] {
+          display: none;
+        }
+      }
+      &:hover + svg{
+        stroke: #0077FF;
+      }
+      .sprites{
+        position: absolute;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        user-select: none;
+      }
+    }
+    select:after{
+      width: 0; 
+      height: 0; 
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #f00;
+      position: absolute;
+      top: 40%;
+      right: 5px;
+      content: "";
+      z-index: 98;
+    }
+  }
+}

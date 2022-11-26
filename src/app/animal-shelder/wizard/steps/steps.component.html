@@ -1,0 +1,7 @@
+<div class="form-steps-container">
+    <ng-container *ngFor="let step of steps; let i = index;">
+         <div [ngClass]="{ 'step-complete': i < currentStepIndex, 'step-incomplete': i > currentStepIndex, 'step-current': currentStepIndex === i}"
+            class="step-bubble">{{ i + 1 }}</div>
+        <div *ngIf="i < steps.length - 1" class="step-line"></div>
+    </ng-container>
+</div>

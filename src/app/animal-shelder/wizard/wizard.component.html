@@ -1,0 +1,33 @@
+<ng-container *ngIf="stateWizard.value !== 'lastPage'; else lastPage">
+    <app-steps></app-steps>
+    <form [formGroup]="wizardForm" class="step-page-container">
+        <div class="form-step">
+            <ng-container [ngSwitch]="stateWizard.value">
+                <ng-container *ngSwitchCase="'start'">
+                    <div class="step-template">
+                        <app-start></app-start>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="'pet'">
+                    <div class="step-template">
+                        <app-pet [petsList]="petsList"></app-pet>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="'personalData'">
+                    <div class="step-template">
+                        <app-personal-data formGroupName="personalData"></app-personal-data>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+    </form>
+    <div class="form-continue-btns">
+        <button (click)="onBackStep()"  class="form-btn common-btn">{{stateWizard.value === 'start' ? 'Already left contacts' : 'Back'}}</button>
+        <button (click)="onNextStep()" [disabled]="wizardForm.get(stateWizard.value)?.invalid"  class="form-btn common-btn">Continue</button>
+    </div>
+</ng-container>
+<ng-template #lastPage>
+    <div class="step-template">
+        <app-last-page></app-last-page>
+    </div>
+</ng-template>

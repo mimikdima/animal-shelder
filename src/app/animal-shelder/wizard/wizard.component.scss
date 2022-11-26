@@ -1,0 +1,42 @@
+:host{
+    display: flex;
+    flex-direction: column;    
+    height: 85%;
+    .step-page-container {
+        flex: 0;
+        margin: 0px 32px;
+    }
+    .form-continue-btns{
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        .form-btn {
+            margin: 20px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed !important;
+            }
+        }
+        .form-btn:hover {
+            background-color: #2EE59D;
+            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+            color: #fff;
+            transform: translateY(-7px);
+            }
+        .common-btn {
+            background-color: #08d;
+            align-self: flex-end;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            cursor: pointer;
+            font-size: 18px;
+            height: 50px;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
